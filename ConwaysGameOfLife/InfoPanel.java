@@ -2,7 +2,6 @@ package ConwaysGameOfLife;
 
 import javax.swing.JPanel;
 import java.awt.*;
-import java.awt.font.TextAttribute;
 
 public class InfoPanel extends JPanel {
 
@@ -29,9 +28,9 @@ public class InfoPanel extends JPanel {
 
         graphics.drawString("+     -> Increase FPS", 8, 55);
         graphics.drawString("-     -> Decrease FPS", 8, 75);
-        graphics.drawString("SPACE -> Start/Pause Game", 8, 95);
-        graphics.drawString("R     -> Restart Game", 8, 115);
-        graphics.drawString("ESC   -> Exit Game", 8, 135);
+        graphics.drawString("SPACE -> Start/Pause", 8, 95);
+        graphics.drawString("R     -> Restart", 8, 115);
+        graphics.drawString("ESC   -> Close", 8, 135);
 
     }
 }

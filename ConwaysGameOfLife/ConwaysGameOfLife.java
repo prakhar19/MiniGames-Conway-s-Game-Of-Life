@@ -42,13 +42,13 @@ public class ConwaysGameOfLife {
             }
             catch(Exception e) {
                 gridSize = 50;
-                columnSize = 16;
+                columnSize = 15;
             }
 
         }
         else {
             gridSize = 50;
-            columnSize = 16;
+            columnSize = 15;
         }
 
 
@@ -56,7 +56,7 @@ public class ConwaysGameOfLife {
 
         game.newGame();
 
-        game.preparationTime();
+        game.pauseGame();
 
         game.startGame();
     }
@@ -66,35 +66,28 @@ public class ConwaysGameOfLife {
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainFrame.getContentPane().setBackground(Color.WHITE);
 
-        mainFrame.addKeyListener(new KeyLogger());
-
         gamePanel = new GamePanel(city, GRID_SIZE, COLUMN_SIZE);
         mainFrame.add(gamePanel, BorderLayout.CENTER);
 
         infoPanel = new InfoPanel(GRID_SIZE * COLUMN_SIZE);
         mainFrame.add(infoPanel, BorderLayout.EAST);
 
+        mainFrame.addKeyListener(new KeyLogger());
+        mainFrame.addMouseListener(new MouseLogger());
+        mainFrame.addMouseMotionListener(new MouseMotionLogger());
+
         mainFrame.pack();
         mainFrame.setLocationRelativeTo(null);
         mainFrame.setVisible(true);
     }
 
-    public void preparationTime() {
-        MouseLogger mouseLogger = new MouseLogger();
-        MouseMotionLogger mouseMotionLogger = new MouseMotionLogger();
-
-        mainFrame.addMouseListener(mouseLogger);
-        mainFrame.addMouseMotionListener(mouseMotionLogger);
-
+    public void pauseGame() {
         while(!runFlag) {
             try {
                 Thread.sleep(1);
             }
             catch(InterruptedException e) { }
         }
-
-        mainFrame.removeMouseListener(mouseLogger);
-        mainFrame.removeMouseMotionListener(mouseMotionLogger);
     }
 
     public void startGame() {
@@ -102,9 +95,10 @@ public class ConwaysGameOfLife {
         boolean newcity[][] = new boolean[GRID_SIZE + 2][GRID_SIZE + 2];
 
         while(true) {
+            repaintGamePanel();
+
             if(!runFlag) {
-                repaintGamePanel();
-                preparationTime();
+                pauseGame();
             }
 
             for(i = 0; i < GRID_SIZE; i++) {
@@ -145,8 +139,6 @@ public class ConwaysGameOfLife {
                 Thread.sleep((int) 1000 / fps);
             }
             catch(InterruptedException e) { }
-
-            repaintGamePanel();
         }
     }
 
