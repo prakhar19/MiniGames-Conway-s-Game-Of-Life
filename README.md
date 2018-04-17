@@ -12,4 +12,4 @@ where, `GRID_SIZE` is the number of rows/columns, and `COLUMN_SIZE` is the size 
 ###Preview:
 
 
-![Conway's Game Of Life Preview Image](/Readme-Images/Conway's Game Of Life.png "Conway's Game Of Life Preview Image")
+![Conway's Game Of Life Preview Image](/Readme-Images/Conway's_Game_Of_Life_Preview_Image.png "Conway's Game Of Life Preview Image")
