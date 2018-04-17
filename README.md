@@ -8,7 +8,13 @@ java ConwaysGameOfLife GRID_SIZE COLUMN_SIZE
 
 where, `GRID_SIZE` is the number of rows/columns, and `COLUMN_SIZE` is the size of each column in pixels.
 
-      
+
+
+
+
+
+
+  
 ### Preview:
 
 
