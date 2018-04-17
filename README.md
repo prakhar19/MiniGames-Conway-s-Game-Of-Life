@@ -9,13 +9,17 @@ java ConwaysGameOfLife GRID_SIZE COLUMN_SIZE
 where, `GRID_SIZE` is the number of rows/columns, and `COLUMN_SIZE` is the size of each column in pixels.
 
 
-
-
-
-
-
-  
-### Preview:
+## Preview:
 
 
 ![Conway's Game Of Life Preview Image](/Readme-Images/Conway's_Game_Of_Life_Preview_Image.png "Conway's Game Of Life Preview Image")
+
+
+
+
+For more info on Conway's Game Of Life, see: http://web.stanford.edu/~cdebs/GameOfLife/
+
+
+## License
+
+MIT
