@@ -1,4 +1,4 @@
-This was made for a submission to one of my college projects.
+I made this for a submission to one of my college projects.
 
 A simple representation of the Conway's Game Of Life (for more info, go here: http://web.stanford.edu/~cdebs/GameOfLife/) on a finite square grid, made using JAVA. The original game consists of an infinite grid.
 
